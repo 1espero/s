@@ -1,0 +1,692 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    position: relative;
+    z-index: 1;
+    
+}
+
+/* Background Video */
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Header */
+header {
+    background-color: rgba(248, 38, 10, 0.8);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.logo {
+    max-width: 80px;
+    display: inline-block;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin: 10px 0;
+}
+
+
+
+/* Mtindo wa saa */
+.clock-container {
+    position: fixed;
+    top: 10px; /* Nafasi ya juu */
+    right: 10px; /* Nafasi ya kulia */
+ 
+    padding: 10px 20px;
+    border: 2px solid #333; /* Mstari wa kisanduku */
+    border-radius: 8px; /* Kona za duara */
+    font-family: Arial, sans-serif;
+    color: #e2d3d3; /* Rangi ya maandishi */
+    font-size: 18px;
+    z-index: 1000; /* Hakikisha iko juu ya kila kitu */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Kivuli */
+    text-align: center; /* Maandishi ya katikati */
+}
+
+.format-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    font-size: 16px; /* Ukubwa wa mshale */
+    cursor: pointer;
+    color: #333; /* Rangi ya mshale */
+    
+    border: 2px solid #1af40a; /* Mstari wa duara */
+    border-radius: 50%; /* Fanya duara */
+    margin: 10px auto 0; /* Kuweka katikati */
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.format-icon:hover {
+    background-color: #ff0000; /* Rangi ya bluu unapobofya */
+    color: #fff; /* Rangi ya mshale unapobofya */
+    transform: scale(1.1); /* Punguza au ongeza kidogo mshale */
+}
+
+
+
+
+/* Slideshow and Principal Info Section */
+.slideshow-principal-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.slideshow-container {
+    width: 55%;
+    margin-right: 20px;
+}
+
+.principal-info {
+    width: 40%;
+}
+
+.principal-box {
+    background: rgba(120, 17, 17, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    background: rgba(132, 13, 13, 0.8);
+    text-align: center;
+}
+
+.principal-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+/* Slideshow Styles */
+.slideshow {
+    position: relative;
+    max-width: 100%;
+}
+
+.slide {
+    width: 100%;
+    display: none;
+    border-radius: 8px;
+}
+
+
+/* Contact Info */
+.contact-info {
+    background-color: rgba(6, 1, 11, 0.8);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.contact-info h2 {
+    font-size: 2em;
+}
+.coz-info {
+    background-color: rgba(32, 159, 0, 0.8);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+@media screen and (max-width: 768px) {
+    .slideshow-principal-container {
+        flex-direction: column;
+    }
+
+    .slideshow-container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .principal-info {
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+/* Fade effect for the slideshow */
+.slide {
+    width: 100%;
+    display: none;
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+}
+
+.slide.fade {
+    opacity: 1;
+    display: block !important;
+}
+
+/* Optional: Make the slideshow container more visually appealing */
+.slideshow-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.slideshow {
+    position: relative;
+    max-width: 100%;
+    display: block;
+}
+
+
+
+
+/* General Button Styles */
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+}
+
+/* Glowing Animation */
+button.glow {
+    background-color: #007bff;  /* Initial button color */
+    animation: glow 3s infinite; /* 3-second animation loop */
+}
+
+/* Keyframes for color-changing glow effect */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px #007bff, 0 0 20px #007bff, 0 0 30px #007bff;
+        background-color: #007bff;
+    }
+    25% {
+        box-shadow: 0 0 10px #28a745, 0 0 20px #28a745, 0 0 30px #28a745;
+        background-color: #28a745;
+    }
+    50% {
+        box-shadow: 0 0 10px #ffc107, 0 0 20px #ffc107, 0 0 30px #ffc107;
+        background-color: #ffc107;
+    }
+    75% {
+        box-shadow: 0 0 10px #dc3545, 0 0 20px #dc3545, 0 0 30px #dc3545;
+        background-color: #dc3545;
+    }
+    100% {
+        box-shadow: 0 0 10px #007bff, 0 0 20px #007bff, 0 0 30px #007bff;
+        background-color: #007bff;
+    }
+}
+
+/* Optional: Hover Effect to Intensify Glow */
+button.glow:hover {
+    box-shadow: 0 0 15px #ffffff, 0 0 30px #ffffff, 0 0 45px #ffffff;
+    background-color: #ffffff;
+    color: #007bff;
+}
+
+
+
+
+
+
+.dancing-script-style {
+    font-family: "Dancing Script", cursive; /* Font ya Dancing Script */
+    font-weight: 700; /* Uzito wa fonti */
+    font-size: 45px; /* Ukubwa wa fonti */
+    color: rgb(12, 170, 15); /* Rangi ya maandishi */
+    text-shadow: 1px 1px 0 black, /* Kivuli cha mstari mweusi */
+                 -1px 1px 0 black,
+                 1px -1px 0 black,
+                 -1px -1px 0 black;
+    text-align: center; /* Maandishi katikati */
+    margin: 20px auto; /* Nafasi juu na chini, maandishi katikati */
+}
+
+
+
+
+
+
+
+/* General Button Styles */
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+    border: 3px solid transparent; /* Border to hold color animation */
+    border-radius: 8px;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    overflow: hidden;
+    background-color: #007bff; /* Initial button color */
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Animated Border Effect */
+button.animated-border {
+    animation: borderColorChange 3s infinite; /* 3-second loop for border color change */
+}
+
+/* Keyframes for color-changing border */
+@keyframes borderColorChange {
+    0% {
+        border-color: #007bff;
+        background-color: #007bff;
+    }
+    25% {
+        border-color: #28a745;
+        background-color: #28a745;
+    }
+    50% {
+        border-color: #ffc107;
+        background-color: #ffc107;
+    }
+    75% {
+        border-color: #dc3545;
+        background-color: #dc3545;
+    }
+    100% {
+        border-color: #007bff;
+        background-color: #007bff;
+    }
+}
+
+/* Optional: Hover Effect to Intensify */
+button.animated-border:hover {
+    color: #007bff;
+    background-color: white;
+}
+
+
+
+
+/*picha ya button*/
+/* Additional styles for the extra content section */
+#moreText {
+    margin-top: 10px;
+    font-size: 0.95em;
+    color: #333;
+}
+
+
+/* environment containner */
+.headpitchure  {
+    background-color: rgba(121, 6, 6, 0.8);
+    color: white;
+    padding: 15px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    color: rgba(15, 1, 1, 0.929);
+    text-align: center;
+    padding: 20px;
+    font-size: 1em;
+}
+
+
+
+
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slideshow {
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+/* Animation when a slide becomes active */
+.slide.active {
+    display: block;
+    opacity: 1;
+    animation: slideInLeft 1s ease-in-out, zoomIn 1s 1s ease-in-out, fadeIn 1s 1s ease-in-out;
+}
+
+/* Slide-in animation from the right */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Zoom-in animation */
+@keyframes zoomIn {
+    from {
+        transform: scale(0.9);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+/* Optional: Adding a slide-out animation for transitions */
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* Add a fade effect */
+@keyframes fadeEffect {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Optional: You can add other animations as needed */
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+
+
+
+
+
+
+
+
+.footer {
+    background: rgba(16, 23, 16, 0.5);
+    color: #ffffff;
+
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: grid;
+    text-align: center;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.footer-section {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-section h3 {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.footer-section p {
+    font-size: 14px;
+    margin: 0;
+    text-align: center;
+
+    color: #aaa;
+}
+
+.footer-section ul {
+    list-style: none;
+    text-align: center;
+    text-align: center;
+    padding: 0;
+}
+
+.footer-section ul li {
+    font-size: 14px;
+    color: #aaa;
+    text-align: center;
+    margin: 5px 0;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+    text-align: center;
+    left: 100px;
+}
+
+.social-icons a img {
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    left: 100px;
+  
+}
+
+.stars {
+    color: #ffd700;
+    font-size: 16px;
+}
+
+.star-icon {
+    color: #00ff00;
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+
+
+
+
+/* Huu ni mtindo wa kawaida unaoonekana kwenye kompyuta */
+.footer {
+    display: block;
+}
+
+.contact-info {
+    display: none;
+}
+
+/* Media query kwa ajili ya watumiaji wa simu */
+@media only screen and (max-width: 768px) {
+    .footer {
+        display: none;
+    }
+
+    .contact-info {
+        display: block;
+    }
+}
+
+
+
+
+
+
+.header {
+    background: #8b0000;
+    color: rgb(8, 188, 32);
+    text-align: center;
+    padding: 28px 10px;
+}
+
+.header h1 {
+    font-size: 28px;
+    margin: 0;
+}
+
+.header h2 {
+    font-size: 25px;
+    margin: 5px 0;
+}
+
+
+
+/* Muonekano wa kawaida kwa PC */
+.header-content {
+    display: block; /* Onyesha kwa PC */
+}
+
+.header {
+    display: none; /* Hakikisha header inaonekana kwa simu */
+}
+
+/* Muonekano wa simu */
+@media only screen and (max-width: 768px) {
+    .header-content {
+        display: none; /* Ficha content kwa simu */
+    }
+
+    .header {
+        display: block; /* Hakikisha header inaonekana kwa simu */
+    }
+}
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #dae6dd; /* Green background */
+    color: #ebe4e4;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color:garb #13940c;
+    box-shadow: 0 0 10px rgba(56, 247, 18, 0.688);
+    border-radius: 8px;
+    color: #aaa;
+}
+h1, h2, h3 {
+    color: #0f6d0d;
+    text-align: center; /* Center align headers */
+}
+h2 {
+    margin-top: 20px;
+}
+ul {
+    list-style-type: disc;
+    margin: 10px 0;
+    padding-left: 40px;
+}
+.benefits {
+    background-color: #540b07;
+    padding: 10px 15px;
+    border-left: 4px solid #0ea70e;
+    margin: 20px 0;
+    color: #cccccc;
+}
+.enroll {
+    text-align: center;
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #0b750d;
+    color: #f4e4e4;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+
+.button {
+    display: inline-block;
+    margin: 30px auto;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #991b05;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #218838;
+}
+
+
+
+
+/* Hide elements for mobile users */
+@media (max-width: 768px) {
+    .footer,
+    .clock-container,
+    .background-video {
+        display: none !important; /* Ensure elements are hidden */
+    }
+}
+
+
+.fallback-background {
+    background-color: #cccccc; /* Rangi ya kijivu */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
