@@ -43,6 +43,35 @@ header h1 {
 }
 
 
+.menu {
+    background-color: #cd2c2c29;
+    overflow: hidden;
+}
+.menu a {
+    float: left ;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.menu a:hover {
+    background-color: #0c4203;
+    color: black;
+}
+
+@media (max-width: 600px) {
+    .menu {
+        display: flex;
+        flex-direction: column;
+    }
+    .menu a {
+        float: none;
+        width: 100%;
+        text-align: left;
+        padding: 10px;
+    }
+}
 
 /* Mtindo wa saa */
 .clock-container {
