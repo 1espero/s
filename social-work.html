@@ -239,7 +239,61 @@
 
     <script src="script.js"></script>
 
+     <div id="translate_container">
+        <div id="translate_icon" onclick="toggleLanguageOptions()">🌍</div>
+        <div id="language_options">
+            <div class="translate-option" onclick="translateLanguage('en')">English</div>
+            <div class="translate-option" onclick="translateLanguage('sw')">Kiswahili</div>
+            <div class="translate-option" onclick="translateLanguage('eo')">Esperanto</div>
+        </div>
+    </div>
+
+    <!-- JavaScript ya Google Translate -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                { pageLanguage: 'en' }, 
+                'google_translate_element'
+            );
+        }
+
+        function translateLanguage(lang) {
+            var selectField = document.querySelector(".goog-te-combo");
+            if (selectField) {
+                selectField.value = lang;
+                selectField.dispatchEvent(new Event("change"));
+            }
+            document.getElementById("language_options").style.display = "none"; // Ficha menu baada ya kubofya lugha
+        }
+
+        function toggleLanguageOptions() {
+            var langOptions = document.getElementById("language_options");
+            if (langOptions.style.display === "none") {
+                langOptions.style.display = "flex";
+            } else {
+                langOptions.style.display = "none";
+            }
+        }
+    </script>
+
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+
     
+    <div id="google_translate_element"></div>
+    <!-- to your js part -->
+    <script src="script.js"></script>
+          <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement(
+                    {pageLanguage: 'en'},
+                    'google_translate_element'
+                );
+            } 
+      </script>
+      <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 
 </body>
 </html>
