@@ -719,3 +719,59 @@ ul {
     left: 0;
     z-index: -1;
 }
+
+  /* Muundo wa sehemu ya translator */
+        #translate_container {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 1000;
+        }
+
+        /* Muundo wa icon ya translator */
+        #translate_icon {
+            background-color: green;
+            color: white;
+            padding: 8px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            text-align: center;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Sehemu ya lugha inayoonekana baada ya kubofya */
+        #language_options {
+            display: none;
+            flex-direction: column;
+            background-color: green;
+            padding: 5px;
+            border-radius: 5px;
+            margin-top: 5px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Muundo wa kila lugha */
+        .translate-option {
+            color: white;
+            font-size: 14px;
+            padding: 5px 10px;
+            cursor: pointer;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        /* Kuondoa mstari kwenye lugha ya mwisho */
+        .translate-option:last-child {
+            border-bottom: none;
+        }
+
+        /* Kubadilisha rangi lugha inapobonyezwa */
+        .translate-option:hover {
+            background-color: darkgreen;
+        }
